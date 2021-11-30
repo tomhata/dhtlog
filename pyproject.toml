@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "dhtlog"
+version = "0.1.0"
+description = "Record temperature and humidity data using Raspberry Pi and DHT22 sensor and upload to PostgreSQL server."
+authors = ["Tom Hata"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+psycopg2 = "^2.9.2"
+python-dotenv = "^0.19.2"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^4.0.1"
+black = "^21.11-beta.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
