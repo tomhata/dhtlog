@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dhtlog"
-version = "0.1.0"
+version = "1.0.0"
 description = "Record temperature and humidity data using Raspberry Pi and DHT22 sensor and upload to PostgreSQL server."
 authors = ["Tom Hata"]
 readme = "README.md"

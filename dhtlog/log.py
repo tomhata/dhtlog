@@ -23,10 +23,10 @@ if __name__ == "__main__":
         type=str,
         required=False,
         default="/home/pi/dhtlog/.env",
-        )
+    )
     args = parser.parse_args()
-    
-    load_dotenv(args.path_env) # Load environmental variables
+
+    load_dotenv(args.path_env)  # Load environmental variables
 
     conn = psycopg2.connect(
         host=os.getenv("SQL_HOST"),
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         database=os.getenv("SQL_DATABASE"),
         user=os.getenv("SQL_USER"),
         password=os.getenv("SQL_PASSWORD"),
-        )
+    )
     cur = conn.cursor()
 
     table = os.getenv("SQL_TABLE")
@@ -48,9 +48,9 @@ if __name__ == "__main__":
         conn.commit()
 
         time_interval = int(os.getenv("INTERVAL"))
-        time_left = time_interval - ((time.time() - time_start) %  time_interval)
+        time_left = time_interval - ((time.time() - time_start) % time_interval)
 
         time.sleep(time_left)
-    
+
     cur.close()
     conn.close()
