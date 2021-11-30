@@ -37,13 +37,15 @@ if __name__ == "__main__":
         )
     cur = conn.cursor()
 
-    query = f"INSERT INTO {os.getenv["TABLE"]} (datetime, temperature, humidity) VALUES (%s, %s, %s)"
+    table = os.getenv["TABLE"]
+    query = f"INSERT INTO {table} (datetime, temperature, humidity) VALUES (%s, %s, %s)"
 
     while True:
         humidity, temperature = Adafruit_DHT.read_retry(sensor_type, sensor_gpio)
         dt_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         cur.execute(query, (dt_string, temperature, humidity))
         conn.commit()
+        time.wait(os.getenv["INTERVAL"])
     
     cur.close()
     conn.close()
