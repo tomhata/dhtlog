@@ -45,7 +45,7 @@ if __name__ == "__main__":
         dt_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         cur.execute(query, (dt_string, temperature, humidity))
         conn.commit()
-        time.sleep(os.getenv("INTERVAL"))
+        time.sleep(int(os.getenv("INTERVAL")))
     
     cur.close()
     conn.close()
