@@ -29,15 +29,15 @@ if __name__ == "__main__":
     load_dotenv(args.path_env) # Load environmental variables
 
     conn = psycopg2.connect(
-        host=os.getenv["HOST"],
-        port=os.getenv["PORT"],
-        database=os.getenv["DATABASE"],
-        user=os.getenv["USER"],
-        password=os.getenv["PASSWORD"],
+        host=os.getenv("HOST"),
+        port=os.getenv("PORT"),
+        database=os.getenv("DATABASE"),
+        user=os.getenv("USER"),
+        password=os.getenv("PASSWORD"),
         )
     cur = conn.cursor()
 
-    table = os.getenv["TABLE"]
+    table = os.getenv("TABLE")
     query = f"INSERT INTO {table} (datetime, temperature, humidity) VALUES (%s, %s, %s)"
 
     while True:
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         dt_string = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         cur.execute(query, (dt_string, temperature, humidity))
         conn.commit()
-        time.wait(os.getenv["INTERVAL"])
+        time.wait(os.getenv("INTERVAL"))
     
     cur.close()
     conn.close()
