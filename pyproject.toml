@@ -6,6 +6,7 @@ authors = ["Tom Hata"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
+adafruit-dht = "^1.4.0"
 python = "^3.9"
 psycopg2 = "^2.9.2"
 python-dotenv = "^0.19.2"

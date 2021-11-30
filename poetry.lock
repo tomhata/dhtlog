@@ -1,4 +1,12 @@
 [[package]]
+name = "adafruit-dht"
+version = "1.4.0"
+description = "Library to get readings from the DHT11, DHT22, and AM2302 humidity and temperature sensors on a Raspberry Pi or Beaglebone Black."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "black"
 version = "21.11b1"
 description = "The uncompromising code formatter."
@@ -155,9 +163,12 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "dcf690ff6b3aaac861b10c9f5760f624f5598c2061853738b18f994e497216a7"
+content-hash = "59dc247ff89d58c46a49712cee021131a8314c71a03024712590a45a106fdebe"
 
 [metadata.files]
+adafruit-dht = [
+    {file = "Adafruit_DHT-1.4.0.tar.gz", hash = "sha256:e927f2232eff5335cb9d8a2cca6dcad4625e61f205b12e31ef04198ea6dec830"},
+]
 black = [
     {file = "black-21.11b1-py3-none-any.whl", hash = "sha256:802c6c30b637b28645b7fde282ed2569c0cd777dbe493a41b6a03c1d903f99ac"},
     {file = "black-21.11b1.tar.gz", hash = "sha256:a042adbb18b3262faad5aff4e834ff186bb893f95ba3a8013f09de1e5569def2"},
